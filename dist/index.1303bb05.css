@@ -2,8 +2,36 @@ body {
   font-family: Gloria Hallelujah, cursive;
 }
 
-h1 {
+.button-container, h1 {
   text-align: center;
+}
+
+.input {
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.round {
+  border: none;
+  border-radius: 30px;
+  transition: all .3s;
+}
+
+.roundA {
+  background-color: #58f7f7;
+  box-shadow: inset 0 0 30px gray;
+}
+
+.roundA:focus {
+  color: #000;
+  background-color: #bcf7ff;
+  box-shadow: inset 0 0 10px gray;
 }
 
 /*# sourceMappingURL=index.1303bb05.css.map */
