@@ -23,6 +23,19 @@ function runGame(e) {
     if (!winner) switchPlayer();
     else console.log("there is a winner");
 }
+function checkWinner() {
+    const boxes;
+}
+function getBoxes() {
+    const boxesContent = [];
+    for(let i = 1; i <= 9; i++){
+        const box = document.querySelector(`box-${i}`);
+        const boxContent = box.textContent;
+        if (boxContent === null) boxesContent.push("");
+        else boxesContent.push(boxContent);
+    }
+    return boxesContent;
+}
 function switchPlayer() {
     if (turn === "X") turn = "O";
     else turn = "X";
