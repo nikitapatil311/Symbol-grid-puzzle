@@ -1,5 +1,5 @@
 function listenBoard() {
-    board.addEventListener("click", ()=>runGame);
+    board.addEventListener("click", runGame);
 }
 const board = document.querySelector(".game-container");
 function main() {
