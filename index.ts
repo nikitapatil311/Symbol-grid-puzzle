@@ -30,22 +30,21 @@ function runGame(e: Event): void {
   }
 }
 
-function checkWinner() : boolean{
-    const boxes : Array<string> getBoxes();
+function checkWinner(): boolean {
+  const boxes: Array<string> = getBoxes();
 }
 
-function getBoxes(): Array<string>{
-    const boxesContent: Array<string> = [];
-    for(let i=1; i<=9; i++){
-        const box = document.querySelector(`box-${i}`) as HTMLElement;
-        const boxContent: string | null = box.textContent;
-        if(boxContent === null ) boxesContent.push("");
-    else{
-        boxesContent.push(boxContent);
+function getBoxes(): Array<string> {
+  const boxesContent: Array<string> = [];
+  for (let i = 1; i <= 9; i++) {
+    const box = document.querySelector(`box-${i}`) as HTMLElement;
+    const boxContent: string | null = box.textContent;
+    if (boxContent === null) boxesContent.push("");
+    else {
+      boxesContent.push(boxContent);
     }
-}
-    return boxesContent;
-
+  }
+  return boxesContent;
 }
 
 function switchPlayer(): void {
