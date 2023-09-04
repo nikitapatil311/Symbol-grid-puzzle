@@ -2,7 +2,15 @@ body {
   font-family: Gloria Hallelujah, cursive;
 }
 
-.button-container, h1 {
+.button-container {
+  text-align: center;
+}
+
+.button {
+  cursor: pointer;
+}
+
+h1 {
   text-align: center;
 }
 
@@ -15,6 +23,7 @@ body {
 
 .box {
   text-align: center;
+  cursor: pointer;
   background-color: #7fffd4;
   width: 75px;
   height: 75px;
