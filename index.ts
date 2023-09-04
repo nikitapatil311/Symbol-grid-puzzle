@@ -30,6 +30,15 @@ function runGame(e: Event): void {
   }
 }
 
+function checkWinner() : boolean{
+    const boxes : Array<string> getBoxes();
+}
+
+function getBoxes: Array<string>{
+    const boxesContent: Array<string> = [];
+
+}
+
 function switchPlayer(): void {
   if (turn === "X") {
     turn = "O";
