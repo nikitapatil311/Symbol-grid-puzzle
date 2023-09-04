@@ -1,6 +1,12 @@
 function listenBoard() {
     board.addEventListener("click", runGame);
 }
+let turn = "X";
+// const TURN = {
+//   X: "X",
+//   O: "X",
+//   EMPTY: " ",
+// };
 const board = document.querySelector(".game-container");
 function main() {
     createBoard();
@@ -12,6 +18,12 @@ function runGame(e) {
     if (boxId === null) return;
     const box = document.querySelector(`#${boxId}`);
     if (box === null || box.textContent !== "") return;
+    box.textContent = turn;
+    switchPlayer(turn);
+}
+function switchPlayer(turn) {
+    if (turn === "X") turn = "O";
+    else turn = "X";
 }
 function createBoard() {
     for(let i = 1; i <= 9; i++)makeBox(i);
