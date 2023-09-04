@@ -11,6 +11,8 @@ function runGame(e: Event): void {
   const boxId: string | null = (<HTMLElement>e.target).id;
   console.log(boxId);
   if (boxId === null) return;
+  const box: HTMLElement | null = document.querySelector(`#${boxId}`);
+  if (box === null || box.textContent !== "") return;
 }
 
 function createBoard(): void {
@@ -23,7 +25,7 @@ function makeBox(i: number): void {
   const box: HTMLDivElement = document.createElement("div");
   box.className = "box";
   box.id = `box-${i}`;
-  box.textContent = "x";
+  box.textContent = "";
   board.append(box);
 }
 
