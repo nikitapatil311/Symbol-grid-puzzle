@@ -8,16 +8,23 @@ body {
 h1 {
   text-align: center;
 }
-.box {
-  width: 75px;
-  height: 75px;
+.game-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.box {
+  background-color: rgb(126, 137, 133);
+  text-align: center;
+
+  width: 75px;
+  height: 75px;
+
   font-weight: 800;
   font-size: 50px;
   box-shadow: 5px 5px 5px red;
 }
+
 .input {
   padding: 10px 20px;
   font-size: 15px;
