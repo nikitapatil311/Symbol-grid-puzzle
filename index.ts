@@ -40,6 +40,8 @@ function getBoxes: Array<string>{
         const box = document.querySelector(`box-${i}`) as HTMLElement;
         const boxesContent: string | null = box.textContent;
         if(boxeContent === null ) boxesContent.push("")
+    }else{
+        boxesContent.push(boxContent);
     }
 
 }
