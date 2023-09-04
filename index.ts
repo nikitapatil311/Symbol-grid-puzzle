@@ -1,7 +1,14 @@
-console.log("I am Here");
+function listenBoard(): void {
+  board.addEventListener("click", () => runGame);
+}
 const board = document.querySelector(".game-container") as HTMLElement;
 function main(): void {
   createBoard();
+  listenBoard();
+}
+
+function runGame(e: Event): void {
+  console.log(e, "button clicked");
 }
 
 function createBoard(): void {
