@@ -36,6 +36,10 @@ function checkWinner() : boolean{
 
 function getBoxes: Array<string>{
     const boxesContent: Array<string> = [];
+    for(let i=1; i<=9; i++){
+        const box = document.querySelector(`box-${i}`) as HTMLElement;
+        const boxesContent: string | null = box.textContent;
+    }
 
 }
 
