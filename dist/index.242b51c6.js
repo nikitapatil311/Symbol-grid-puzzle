@@ -7,10 +7,12 @@ function main() {
     listenBoard();
 }
 function runGame(e) {
-    console.log(e, "button clicked");
+    const boxId = e.target.id;
+    console.log(boxId);
+    if (boxId === null) return;
 }
 function createBoard() {
-    for(let i = 0; i < 9; i++)makeBox(i);
+    for(let i = 1; i <= 9; i++)makeBox(i);
 }
 function makeBox(i) {
     const box = document.createElement("div");

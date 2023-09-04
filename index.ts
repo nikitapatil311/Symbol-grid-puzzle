@@ -8,11 +8,13 @@ function main(): void {
 }
 
 function runGame(e: Event): void {
-  console.log(e, "button clicked");
+  const boxId: string | null = (<HTMLElement>e.target).id;
+  console.log(boxId);
+  if (boxId === null) return;
 }
 
 function createBoard(): void {
-  for (let i = 0; i < 9; i++) {
+  for (let i = 1; i <= 9; i++) {
     makeBox(i);
   }
 }
