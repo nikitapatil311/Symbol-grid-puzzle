@@ -19,9 +19,9 @@ function runGame(e) {
     const box = document.querySelector(`#${boxId}`);
     if (box === null || box.textContent !== "") return;
     box.textContent = turn;
-    switchPlayer(turn);
+    switchPlayer();
 }
-function switchPlayer(turn) {
+function switchPlayer() {
     if (turn === "X") turn = "O";
     else turn = "X";
 }

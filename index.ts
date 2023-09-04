@@ -23,10 +23,10 @@ function runGame(e: Event): void {
   const box: HTMLElement | null = document.querySelector(`#${boxId}`);
   if (box === null || box.textContent !== "") return;
   box.textContent = turn;
-  switchPlayer(turn);
+  switchPlayer();
 }
 
-function switchPlayer(turn: Turn): void {
+function switchPlayer(): void {
   if (turn === "X") {
     turn = "O";
   } else {
