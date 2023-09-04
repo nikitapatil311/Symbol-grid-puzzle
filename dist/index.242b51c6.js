@@ -25,6 +25,7 @@ function runGame(e) {
 }
 function checkWinner() {
     const boxes = getBoxes();
+    return;
 }
 function getBoxes() {
     const boxesContent = [];

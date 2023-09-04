@@ -32,6 +32,7 @@ function runGame(e: Event): void {
 
 function checkWinner(): boolean {
   const boxes: Array<string> = getBoxes();
+  return;
 }
 
 function getBoxes(): Array<string> {
