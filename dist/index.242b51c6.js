@@ -19,7 +19,9 @@ function runGame(e) {
     const box = document.querySelector(`#${boxId}`);
     if (box === null || box.textContent !== "") return;
     box.textContent = turn;
-    switchPlayer();
+    const winner = checkWinner();
+    if (!winner) switchPlayer();
+    else console.log("there is a winner");
 }
 function switchPlayer() {
     if (turn === "X") turn = "O";

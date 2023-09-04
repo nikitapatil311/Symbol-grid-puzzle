@@ -23,7 +23,11 @@ function runGame(e: Event): void {
   const box: HTMLElement | null = document.querySelector(`#${boxId}`);
   if (box === null || box.textContent !== "") return;
   box.textContent = turn;
-  switchPlayer();
+  const winner: boolean = checkWinner();
+  if (!winner) switchPlayer();
+  else {
+    console.log("there is a winner");
+  }
 }
 
 function switchPlayer(): void {
