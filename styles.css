@@ -9,12 +9,17 @@ h1 {
   text-align: center;
 }
 .game-container {
-  display: flex;
+  /* display: flex;
+  
+  align-items: center; */
+
   justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 80px 80px 80px;
+  gap: 20px;
 }
 .box {
-  background-color: rgb(126, 137, 133);
+  background-color: aquamarine;
   text-align: center;
 
   width: 75px;
@@ -22,7 +27,7 @@ h1 {
 
   font-weight: 800;
   font-size: 50px;
-  box-shadow: 5px 5px 5px red;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
 
 .input {
