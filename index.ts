@@ -39,6 +39,7 @@ function checkWinner(): boolean {
     (boxes[1] === boxes[5] && boxes[5] === boxes[9] && boxes[1] !== "") ||
     (boxes[3] === boxes[5] && boxes[5] === boxes[7] && boxes[3] !== "") ||
     (boxes[2] === boxes[5] && boxes[5] === boxes[8] && boxes[2] !== "") ||
+    (boxes[1] === boxes[4] && boxes[4] === boxes[7] && boxes[1] !== "") ||
   );
 }
 
