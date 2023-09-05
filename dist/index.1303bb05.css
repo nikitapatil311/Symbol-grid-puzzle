@@ -56,8 +56,8 @@ h1 {
 }
 
 .roundA {
-  background-color: #58f7f7;
-  box-shadow: inset 0 0 30px gray;
+  background: linear-gradient(.25turn, #f2bed1, #f9f5f6);
+  box-shadow: 5px 5px 5px #000;
 }
 
 .roundA:hover {
