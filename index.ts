@@ -43,8 +43,12 @@ function endGame(): void {
 }
 
 function resetGame(): void {
-  console.log("Game reset");
+  turn = "X";
+
+  resetBoxes();
 }
+function resetBoxes(): void {}
+
 function checkWinner(): boolean {
   const boxes: Array<string> = getBoxes();
   return (
