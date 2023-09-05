@@ -38,7 +38,9 @@ function resetGame() {
     resetBoxes();
 }
 function resetBoxes() {
-    for(let i = 0; i <= 8; i++);
+    for(let i = 0; i <= 8; i++){
+        const box = document.querySelector(`#box-${i}`);
+    }
 }
 function checkWinner() {
     const boxes = getBoxes();
