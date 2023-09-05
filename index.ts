@@ -1,107 +1,90 @@
-function listenBoard(): void {
+function listenBoard() {
   board.addEventListener("click", runGame);
 }
 
 type Turn = "X" | "O" | " ";
 let turn: Turn = "X";
-
-// const TURN = {
-//   X: "X",
-//   O: "X",
-//   EMPTY: " ",
-// };
 const board = document.querySelector(".game-container") as HTMLElement;
-const button = document.querySelector(".button") as HTMLElement;
+const button = document.querySelector(".button") as HTMLButtonElement;
 const winMessage = document.querySelector(".winner") as HTMLElement;
 
-function main(): void {
+function main() {
   createBoard();
   listenBoard();
 }
 
-function runGame(e: Event): void {
-  const boxId: string | null = (<HTMLElement>e.target).id;
-  console.log(boxId);
-  if (boxId === null) return;
-  const box: HTMLElement | null = document.querySelector(`#${boxId}`);
-  if (box === null || box.textContent !== "") return;
+function runGame(e: Event) {
+  const box = e.target as HTMLElement;
+  if (!box || box.textContent !== "") return;
   box.textContent = turn;
-  const winner: boolean = checkWinner();
+  const winner = checkWinner();
   if (!winner) switchPlayer();
-  else {
-    endGame();
-  }
+  else endGame();
 }
 
-function endGame(): void {
+function endGame() {
   board.removeEventListener("click", runGame);
   button.addEventListener("click", resetGame);
-  if (winMessage === null) return;
-  winMessage.textContent = `winner is ${turn}`;
-  winMessage.setAttribute("display", "block");
+  winMessage.textContent = `Winner is ${turn}`;
+  winMessage.style.display = "block";
   button.style.visibility = "visible";
 }
 
-function resetGame(): void {
+function resetGame() {
   turn = "X";
-
   resetBoxes();
   button.style.visibility = "hidden";
-  winMessage.textContent = " ";
+  winMessage.style.display = "none";
   board.addEventListener("click", runGame);
 }
-function resetBoxes(): void {
-  for (let i = 0; i <= 8; i++) {
-    const box = document.querySelector(`#box-${i}`) as HTMLElement;
+
+function resetBoxes() {
+  const boxes = document.querySelectorAll(".box");
+  boxes.forEach((box) => {
     box.textContent = "";
-  }
+  });
 }
 
-function checkWinner(): boolean {
-  const boxes: Array<string> = getBoxes();
-  return (
-    (boxes[1] === boxes[2] && boxes[2] === boxes[3] && boxes[1] !== "") ||
-    (boxes[4] === boxes[5] && boxes[5] === boxes[6] && boxes[4] !== "") ||
-    (boxes[7] === boxes[8] && boxes[8] === boxes[9] && boxes[7] !== "") ||
-    (boxes[1] === boxes[5] && boxes[5] === boxes[9] && boxes[1] !== "") ||
-    (boxes[3] === boxes[5] && boxes[5] === boxes[7] && boxes[3] !== "") ||
-    (boxes[2] === boxes[5] && boxes[5] === boxes[8] && boxes[2] !== "") ||
-    (boxes[1] === boxes[4] && boxes[4] === boxes[7] && boxes[1] !== "") ||
-    (boxes[3] === boxes[6] && boxes[6] === boxes[9] && boxes[3] !== "")
-  );
-}
+function checkWinner() {
+  const boxes = document.querySelectorAll(".box");
+  const winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8], // Rows
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8], // Columns
+    [0, 4, 8],
+    [2, 4, 6], // Diagonals
+  ];
 
-function getBoxes(): Array<string> {
-  const boxesContent: Array<string> = [];
-  for (let i = 1; i <= 9; i++) {
-    const box = document.querySelector(`#box-${i}`) as HTMLElement;
-    const boxContent: string | null = box.textContent;
-    if (boxContent === null) boxesContent.push("");
-    else {
-      boxesContent.push(boxContent);
+  for (const combo of winningCombinations) {
+    const [a, b, c] = combo;
+    if (
+      boxes[a].textContent &&
+      boxes[a].textContent === boxes[b].textContent &&
+      boxes[b].textContent === boxes[c].textContent
+    ) {
+      return true;
     }
   }
-  return boxesContent;
+
+  return false;
 }
 
-function switchPlayer(): void {
-  if (turn === "X") {
-    turn = "O";
-  } else {
-    turn = "X";
-  }
+function switchPlayer() {
+  turn = turn === "X" ? "O" : "X";
 }
 
-function createBoard(): void {
-  for (let i = 1; i <= 9; i++) {
+function createBoard() {
+  for (let i = 0; i < 9; i++) {
     makeBox(i);
   }
 }
 
-function makeBox(i: number): void {
-  const box: HTMLDivElement = document.createElement("div");
+function makeBox(i: number) {
+  const box = document.createElement("div");
   box.className = "box";
-  box.id = `box-${i}`;
   box.textContent = "";
   board.append(box);
 }
