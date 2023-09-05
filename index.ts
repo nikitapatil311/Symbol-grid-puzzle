@@ -47,7 +47,9 @@ function resetGame(): void {
 
   resetBoxes();
 }
-function resetBoxes(): void {}
+function resetBoxes(): void {
+  for (let i = 0; i <= 8; i++) {}
+}
 
 function checkWinner(): boolean {
   const boxes: Array<string> = getBoxes();

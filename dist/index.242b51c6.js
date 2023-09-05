@@ -37,7 +37,9 @@ function resetGame() {
     turn = "X";
     resetBoxes();
 }
-function resetBoxes() {}
+function resetBoxes() {
+    for(let i = 0; i <= 8; i++);
+}
 function checkWinner() {
     const boxes = getBoxes();
     return boxes[1] === boxes[2] && boxes[2] === boxes[3] && boxes[1] !== "" || boxes[4] === boxes[5] && boxes[5] === boxes[6] && boxes[4] !== "" || boxes[7] === boxes[8] && boxes[8] === boxes[9] && boxes[7] !== "" || boxes[1] === boxes[5] && boxes[5] === boxes[9] && boxes[1] !== "" || boxes[3] === boxes[5] && boxes[5] === boxes[7] && boxes[3] !== "" || boxes[2] === boxes[5] && boxes[5] === boxes[8] && boxes[2] !== "" || boxes[1] === boxes[4] && boxes[4] === boxes[7] && boxes[1] !== "" || boxes[3] === boxes[6] && boxes[6] === boxes[9] && boxes[3] !== "";
