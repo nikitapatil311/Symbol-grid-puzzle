@@ -11,6 +11,8 @@ let turn: Turn = "X";
 //   EMPTY: " ",
 // };
 const board = document.querySelector(".game-container") as HTMLElement;
+const button = document.querySelector(".button") as HTMLElement;
+
 function main(): void {
   createBoard();
   listenBoard();
@@ -32,6 +34,7 @@ function runGame(e: Event): void {
 
 function endGame(): void {
   board.removeEventListener("click", runGame);
+  button.addEventListener("click", resetGAme);
 }
 
 function checkWinner(): boolean {
