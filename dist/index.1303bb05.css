@@ -11,6 +11,10 @@ body {
   visibility: hidden;
 }
 
+.winner {
+  display: hidden;
+}
+
 h1 {
   text-align: center;
 }
