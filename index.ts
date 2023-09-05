@@ -26,8 +26,12 @@ function runGame(e: Event): void {
   const winner: boolean = checkWinner();
   if (!winner) switchPlayer();
   else {
-    console.log("there is a winner");
+    endGame();
   }
+}
+
+function endGame(): void {
+  board.removeEventListener("click", runGame);
 }
 
 function checkWinner(): boolean {

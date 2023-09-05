@@ -21,7 +21,10 @@ function runGame(e) {
     box.textContent = turn;
     const winner = checkWinner();
     if (!winner) switchPlayer();
-    else console.log("there is a winner");
+    else endGame();
+}
+function endGame() {
+    board.removeEventListener("click", runGame);
 }
 function checkWinner() {
     const boxes = getBoxes();
