@@ -38,6 +38,8 @@ function endGame(): void {
   button.addEventListener("click", resetGame);
   if (winMessage === null) return;
   winMessage.textContent = turn;
+  winMessage.setAttribute("display", "block");
+  button.style.visibility = "visible";
 }
 
 function resetGame(): void {
