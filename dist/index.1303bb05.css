@@ -1,4 +1,5 @@
 body {
+  background: linear-gradient(.25turn, #f2bed1, #fdcedf, #f8e8ee, #f9f5f6);
   font-family: Gloria Hallelujah, cursive;
 }
 
@@ -29,7 +30,7 @@ h1 {
 .box {
   text-align: center;
   cursor: pointer;
-  background-color: #7fffd4;
+  background-color: #f2bed1;
   width: 75px;
   height: 75px;
   font-size: 50px;
