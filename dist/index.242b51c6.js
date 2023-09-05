@@ -30,7 +30,7 @@ function checkWinner() {
 function getBoxes() {
     const boxesContent = [];
     for(let i = 1; i <= 9; i++){
-        const box = document.querySelector(`box-${i}`);
+        const box = document.querySelector(`#box-${i}`);
         const boxContent = box.textContent;
         if (boxContent === null) boxesContent.push("");
         else boxesContent.push(boxContent);
