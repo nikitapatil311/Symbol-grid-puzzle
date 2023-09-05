@@ -37,6 +37,7 @@ function resetGame() {
     turn = "X";
     resetBoxes();
     button.style.visibility = "hidden";
+    winMessage.textContent = " ";
 }
 function resetBoxes() {
     for(let i = 0; i <= 8; i++){
