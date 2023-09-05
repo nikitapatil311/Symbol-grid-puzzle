@@ -40,6 +40,7 @@ function resetGame() {
 function resetBoxes() {
     for(let i = 0; i <= 8; i++){
         const box = document.querySelector(`#box-${i}`);
+        box.textContent = "";
     }
 }
 function checkWinner() {

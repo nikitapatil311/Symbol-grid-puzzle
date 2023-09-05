@@ -50,6 +50,7 @@ function resetGame(): void {
 function resetBoxes(): void {
   for (let i = 0; i <= 8; i++) {
     const box = document.querySelector(`#box-${i}`) as HTMLElement;
+    box.textContent = "";
   }
 }
 
