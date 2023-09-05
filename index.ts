@@ -36,6 +36,8 @@ function runGame(e: Event): void {
 function endGame(): void {
   board.removeEventListener("click", runGame);
   button.addEventListener("click", resetGame);
+  if (winMessage === null) return;
+  winMessage.textContent = turn;
 }
 
 function resetGame(): void {

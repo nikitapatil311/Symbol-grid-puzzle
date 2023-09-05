@@ -28,6 +28,8 @@ function runGame(e) {
 function endGame() {
     board.removeEventListener("click", runGame);
     button.addEventListener("click", resetGame);
+    if (winMessage === null) return;
+    winMessage.textContent = turn;
 }
 function resetGame() {
     console.log("Game reset");
