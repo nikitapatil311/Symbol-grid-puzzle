@@ -9,6 +9,7 @@ let turn = "X";
 // };
 const board = document.querySelector(".game-container");
 const button = document.querySelector(".button");
+const winMessage = document.querySelector(".winner");
 function main() {
     createBoard();
     listenBoard();

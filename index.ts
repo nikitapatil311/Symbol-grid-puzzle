@@ -12,6 +12,7 @@ let turn: Turn = "X";
 // };
 const board = document.querySelector(".game-container") as HTMLElement;
 const button = document.querySelector(".button") as HTMLElement;
+const winMessage = document.querySelector(".winner") as HTMLElement;
 
 function main(): void {
   createBoard();
