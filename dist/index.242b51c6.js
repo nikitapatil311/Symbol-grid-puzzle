@@ -26,7 +26,10 @@ function runGame(e) {
 }
 function endGame() {
     board.removeEventListener("click", runGame);
-    button.addEventListener("click", resetGAme);
+    button.addEventListener("click", resetGame);
+}
+function resetGame() {
+    console.log("Game reset");
 }
 function checkWinner() {
     const boxes = getBoxes();
