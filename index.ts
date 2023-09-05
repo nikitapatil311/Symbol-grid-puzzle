@@ -37,7 +37,7 @@ function endGame(): void {
   board.removeEventListener("click", runGame);
   button.addEventListener("click", resetGame);
   if (winMessage === null) return;
-  winMessage.textContent = turn;
+  winMessage.textContent = `winner is ${turn}`;
   winMessage.setAttribute("display", "block");
   button.style.visibility = "visible";
 }
